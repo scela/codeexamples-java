@@ -43,7 +43,7 @@ public class StaXParser {
 				if (event.isStartElement()) {
 					StartElement startElement = event.asStartElement();
 					// If we have a item element we create a new item
-					if (startElement.getName().getLocalPart().equals(ITEM)) {
+					if (ITEM.equals(startElement.getName().getLocalPart())) {
 						item = new Item();
 						// We read the attributes from this tag and add the date
 						// attribute to our object
@@ -90,7 +90,7 @@ public class StaXParser {
 				// If we reach the end of an item element we add it to the list
 				if (event.isEndElement()) {
 					EndElement endElement = event.asEndElement();
-					if (endElement.getName().getLocalPart().equals(ITEM)) {
+					if (ITEM.equals(endElement.getName().getLocalPart())) {
 						items.add(item);
 					}
 				}
